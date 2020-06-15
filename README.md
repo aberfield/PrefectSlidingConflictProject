@@ -1,0 +1,2 @@
+# PrefectSlidingConflictProject
+解决TableView嵌套了嵌套TableView的CollectionView上下滑动冲突的问题。
