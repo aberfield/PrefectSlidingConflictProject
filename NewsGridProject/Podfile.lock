@@ -1,0 +1,24 @@
+PODS:
+  - Masonry (1.1.0)
+  - MJRefresh (3.4.3)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - Masonry (~> 1.1.0)
+  - MJRefresh (~> 3.4.3)
+  - YYModel (~> 1.0.4)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+    - MJRefresh
+    - YYModel
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 3a5d29906b08ffcd1b9833a79fa17103aa7d0a28
+
+COCOAPODS: 1.9.1

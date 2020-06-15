@@ -1,0 +1,65 @@
+//
+//  GesturePassTableView.m
+//  NewsGridProject
+//
+//  Created by aberfield on 2020/6/10.
+//  Copyright © 2020 aberfield. All rights reserved.
+//
+
+#import "GesturePassTableView.h"
+
+@interface GesturePassTableView () <UIGestureRecognizerDelegate>
+
+@end
+
+@implementation GesturePassTableView
+
+- (instancetype)init {
+    
+    self = [super init];
+    if (self) {
+        [self initSetting];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initSetting];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initSetting];
+    }
+    return self;
+}
+
+#pragma mark - private methods
+
+- (void)initSetting {
+    // 在某些情况下，contentView中的点击事件会被panGestureRecognizer拦截，导致不能响应，
+    // 这里设置cancelsTouchesInView表示不拦截
+    self.panGestureRecognizer.cancelsTouchesInView = NO;
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+
+// 返回YES表示可以继续传递触摸事件，这样两个嵌套的scrollView才能同时滚动
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    id view = otherGestureRecognizer.view;
+    
+    if (_allowGestureEventPassViews && [_allowGestureEventPassViews containsObject:view]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+@end
